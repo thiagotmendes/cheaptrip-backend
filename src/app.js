@@ -4,7 +4,7 @@ import routes from "./routes/index.js"
 
 db.on("error", console.log.bind(console, 'Erro de conexão: '))
 db.once("open", () => {
-    console.log("Conexão com o banco realizada com sucesso.")
+	console.log("Conexão com o banco realizada com sucesso.")
 })
 /**
  * Start to use express and routes

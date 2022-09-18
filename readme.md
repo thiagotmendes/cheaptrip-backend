@@ -1,13 +1,9 @@
 # Cheaptrip backend
 
-<center>
-
 ![NodeJs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![javaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![HerokuApp](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
-
-</center>
 
 
 Backend system to be integrated with the front-end app cheaptrip, an app to help people to save money by creating traveling groups. This is an integration project from Newton Paiva college.
