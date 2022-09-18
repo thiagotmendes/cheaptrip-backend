@@ -1,6 +1,7 @@
 import express from "express";
 // Import especifcs routes
 import users from "./UsersRoutes.js";
+import login from "./UserLogin.js";
 
 const routes = (app) => {
 	app.route('/').get( (req,res) => {
@@ -10,6 +11,7 @@ const routes = (app) => {
 	app.use(
 		express.json(),
 		users,
+		login
 	)
 }
 
