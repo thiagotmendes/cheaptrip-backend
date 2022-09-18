@@ -4,13 +4,43 @@ Backend system to be integrated with the front-end app cheaptrip, an app to help
 
 ## Technologies
 
-NodeJs
-
-Express
+NodeJs + Express
 
 MongoDB + Atlas
 
 Deplyed on Heroku
+
+## Endpoints
+
+https://cheaptrip-backend.herokuapp.com/
+
+All verbs will be followed by the standard:
+
+'''
+get: /
+
+get: /id 
+
+post: /save 
+
+put: /update/id
+
+delete: /delete/id
+'''
+
+Example to user collection:
+
+'''
+get: siteurl/users/ -> get user list
+
+get: siteurl/user/iduser -> get user by id
+
+post: siteurl/user/save -> save user according with json contract
+
+put: siteurl/user/update/id -> update user by id
+
+delete: siteurl/user/delete/id -> delete user by id
+'''
 
 ## Integrantes
 
