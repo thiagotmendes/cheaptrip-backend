@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-mongoose.connect( "mongodb+srv://thiagotmendes:S0ulhunt3r@cluster0.tzbb4bv.mongodb.net/test" );
+const uri = process.env.MONGODB_URI;
+mongoose.connect( uri );
 
 let db = mongoose.connection;
 
