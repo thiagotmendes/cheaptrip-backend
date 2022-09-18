@@ -32,6 +32,8 @@ class LoginController {
 			console.log("Erro ao tentar efetuar login: " + err)
 		}
 	}
+
+
 }
 
 export default LoginController
