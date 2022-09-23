@@ -1,7 +1,8 @@
 import express from "express";
 // Import especifcs routes
-import users from "./UsersRoutes.js";
-import login from "./UserLogin.js";
+import users from "./UsersRouter.js";
+import login from "./UserLoginRouter.js";
+import gruposViagem from "./GruposViagemRouter.js";
 // import auth from "../middleware/auth.js"
 
 const routes = (app) => {
@@ -12,7 +13,8 @@ const routes = (app) => {
 	app.use(
 		express.json(),
 		users,
-		login
+		login,
+		gruposViagem
 	)
 }
 
