@@ -28,11 +28,6 @@ class UserController {
 		// get user body param
 		try {
 			const {name, email, password} = req.body;
-			console.log({
-				name,
-				email,
-				password
-			})
 			const oldUser = await users.findOne( {email} );
 			if (oldUser) {
 				return res.status(409).send({message: "Usuário já existe em nosso banco de dados"});
