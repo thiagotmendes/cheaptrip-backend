@@ -5,10 +5,10 @@ const router = express.Router();
 router
 	// Router verbs
 	.get("/users", UserController.listUsers)
-	.get("/user/:id", UserController.getUserById)
-	.post("/user/save", UserController.saveUsers)
-	.put("/user/update/:id", UserController.updateUser)
-	.delete("/user/delete/:id", UserController.deleteUser)
+	.get("/users/:id", UserController.getUserById)
+	.post("/users", UserController.saveUsers)
+	.put("/users/:id", UserController.updateUser)
+	.delete("/users/:id", UserController.deleteUser)
 
 // Export router
 export default router;

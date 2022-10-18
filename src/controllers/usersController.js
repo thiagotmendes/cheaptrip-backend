@@ -13,17 +13,14 @@ class UserController {
 	}
 
 	// Get user by ID
-	static getUserById = (req, res) => {
-		// get the id parameter
-		const id = req.params.id;
-		// find user by id
-		users.findById( (err, users) => {
-			if(err) {
-				res.status(400).send({message: `${err.message} - Usuário não encontrado`})
-			} else {
-				res.status(200).send(autores)
-			}
-		} )
+	static getUserById = async (req, res) => {
+		try {
+			const id = req.params.id;
+			const user = await users.findOne({ _id: id });
+			res.status(200).send(user)
+		} catch(error) {
+			res.status(400).send({message: error})
+		}
 	}
 
 	// Register User
