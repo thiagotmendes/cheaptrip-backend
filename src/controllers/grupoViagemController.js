@@ -1,8 +1,9 @@
 import gruposViagem from "../models/GruposViagem.js";
 
-
+/**
+ * Grupo viagem controller class
+ */
 class GruposViagemController {
-
 	// get all travel groups
 	static getGruposViagem = (req, res) => {
 		gruposViagem.find((err, gruposViagem) => {
