@@ -4,6 +4,7 @@ const GrupoViagemSchema = new mongoose.Schema({
 	id: {type: String},
 	titulo: {type: String},
 	descricao: {type: String},
+	ImageAdress: {type: String},
 	dataIda: {type: Date},
 	dataVolta: {type: Date},
 	qtdParticipantes: {type: Number},
