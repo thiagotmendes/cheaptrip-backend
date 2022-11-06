@@ -18,21 +18,20 @@ class LoginController {
 					{user_id: user._id, email },
 					process.env.TOKEN_KEY,
 					{
-						expiresIn: "2h"
+						expiresIn: "4h"
 					}
 				);
 				// save user token
 				user.token = token;
 				// user
 				res.status(200).json(user);
+			} else {
+				throw new Error('Invalid Credentials')
 			}
-			// if creadtials are invalid
-			res.status(400).send({message: "Invalid Credentials"});
 		} catch (err) {
-			console.log("Erro ao tentar efetuar login: " + err)
+			res.status(400).json({message: err});
 		}
 	}
-
 
 }
 
