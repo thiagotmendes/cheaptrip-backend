@@ -4,6 +4,9 @@ import jwt from "jsonwebtoken";
 import * as dotenv from 'dotenv'
 dotenv.config()
 
+/**
+ * User Controller class
+ */
 class UserController {
 	// list all users
 	static listUsers = (req, res) => {
