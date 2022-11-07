@@ -88,6 +88,36 @@ class UserController {
 			}
 		})
 	}
+
+	static getCurrentByToken = async (req, res) => {
+		try {
+			const userIdFromCurrentJwtToken = req.user.user_id;
+			const user = await users.findOne({ _id: userIdFromCurrentJwtToken });
+			res.status(200).json(user)
+		} catch(error) {
+			res.status(400).json({message: error})
+		}
+
+	}
+
+	static saveCurrentUserByToken = async (req, res) => {
+
+		try {
+			const userIdFromCurrentJwtToken = req.user.user_id;
+			const {name, email } = req.body;
+			users.findByIdAndUpdate( userIdFromCurrentJwtToken, {$set: {name: name, email: email}}, (err) => {
+				if(!err) {
+					res.status(200).send({message: "User atualizado com sucesso!"})
+				} else {
+					res.status(401).send({message: err.message})
+				}
+			} )
+		} catch(error) {
+			res.status(500).json({message: error})
+		}
+
+	}
+
 }
 
 export default UserController;
