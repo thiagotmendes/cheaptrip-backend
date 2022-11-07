@@ -3,7 +3,7 @@ import express from "express";
 import users from "./UsersRouter.js";
 import login from "./UserLoginRouter.js";
 import gruposViagem from "./GruposViagemRouter.js";
-// import auth from "../middleware/auth.js"
+//import auth from "../middleware/auth.js"
 
 const routes = (app) => {
 	app.route('/').get((req,res) => {
