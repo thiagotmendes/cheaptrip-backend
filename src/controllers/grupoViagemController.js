@@ -1,4 +1,5 @@
 import gruposViagem from "../models/GruposViagem.js";
+import { convertPtBrToDate } from "../utils/date.js";
 
 /**
  * Grupo viagem controller class
@@ -39,7 +40,13 @@ class GruposViagemController {
 
 	// save travel group
 	static saveGrouposViagem = (req, res) => {
-		let grupo = new gruposViagem(req.body)
+		const userIdFromCurrentJwtToken = req.user.user_id;
+		let grupo = new gruposViagem({
+			...req.body,
+			idUser: userIdFromCurrentJwtToken,
+			departureDate: convertPtBrToDate(req.body.departureDate),
+			returnDate: convertPtBrToDate(req.body.returnDate)
+		})
 		grupo.save((err) => {
 			if(err) {
 				res.status(500).send({ message: `${err.message} - falha ao cadastrar um novo grupo`})
