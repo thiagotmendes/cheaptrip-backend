@@ -1,5 +1,5 @@
 import gruposViagem from "../models/GruposViagem.js";
-import { convertPtBrToDate } from "../utils/date.js";
+import { convertPtBrToDate, dateDiffInDays } from "../utils/date.js";
 
 /**
  * Grupo viagem controller class
@@ -9,7 +9,23 @@ class GruposViagemController {
 	static getGruposViagem = (req, res) => {
 		gruposViagem.find((err, gruposViagem) => {
 			if(!err) {
-				res.status(200).json(gruposViagem);
+				const responseAdapter = gruposViagem.map(item => {
+					return {
+						_id: item._id,
+						title: item.title,
+						description: item.description,
+						destination: item.destination,
+						imageAddress: item.imageAddress,
+						departureDate: item.departureDate,
+						returnDate: item.returnDate,
+						participants: item.participants,
+
+						price: item.price,
+						idUser: item.idUser,
+						nights: dateDiffInDays(item.departureDate, item.returnDate)
+					}
+				})
+				res.status(200).json(responseAdapter.reverse());
 			}
 		});
 	}
