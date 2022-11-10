@@ -10,6 +10,6 @@ router
 	.get("/grupos-viagem/user_id/:user_id", GruposViagemController.getGrupoViagemByUserId)
 	.post('/grupos-viagem', auth, GruposViagemController.saveGrouposViagem)
 	.put('/grupos-viagem/update/:id', GruposViagemController.updateGrupoViagem)
-	.delete("/grupos-viagem/delete/:id", GruposViagemController.deleteGrupoViagem)
+	.delete("/grupos-viagem/:id", GruposViagemController.deleteGrupoViagem)
 
 export default router;
