@@ -28,8 +28,7 @@ class LoginController {
 				throw new Error('Invalid Credentials')
 			}
 		} catch (err) {
-			console.log(err.message)
-			res.status(400).send({message: err.message});
+			res.status(400).send({message: "teste" + err.message});
 		}
 	}
 
