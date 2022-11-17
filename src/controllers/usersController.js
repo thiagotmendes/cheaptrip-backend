@@ -101,7 +101,6 @@ class UserController {
 	}
 
 	static saveCurrentUserByToken = async (req, res) => {
-
 		try {
 			const userIdFromCurrentJwtToken = req.user.user_id;
 			const {name, email } = req.body;

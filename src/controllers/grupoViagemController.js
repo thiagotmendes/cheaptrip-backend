@@ -77,7 +77,7 @@ class GruposViagemController {
 		let grupoId = req.params.id;
 		gruposViagem.findByIdAndUpdate(grupoId, {$set: req.body}, (err) => {
 			if(!err) {
-				res.status(200).send({message: "User atualizado com sucesso!"})
+				res.status(200).send({message: "Grupo atualizado com sucesso!"})
 			} else {
 				res.status(500).send({message: err.message})
 			}

@@ -8,9 +8,9 @@ const GrupoViagemSchema = new mongoose.Schema({
 	imageAddress: {type: String},
 	departureDate: {type: Date},
 	returnDate: {type: Date},
-	participants: {type: Number},
+	qtdParticipants: {type: Number},
 	price: {type: Number},
-	idUser: {type: mongoose.Schema.Types.ObjectId, ref: "users", required: true}
+	idUser: {type: mongoose.Schema.Types.ObjectId, ref: "users", required: true} /** to refer the group owner */
 },
 {
 	versionKey: false,
